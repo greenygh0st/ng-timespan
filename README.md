@@ -1,11 +1,33 @@
 # ng-timespan
 Because there were just not a lot of good Typescript options out there for timespans.
 
-### Usage
+## Usage
 
+### Install
 `npm i ng-timespan --save`
 
+### Import
 `import { Timespan } from 'ng-timespan'`
+
+### Use
+```
+// Create a date
+let date1 = new Date()
+
+// Create a second date
+let date2 = date1.setHours(date1.getHours() + 2)
+
+// Create the Timespan
+let timespan = TimeSpan.Subtract(date1, date2)
+
+// Do stuff! :)
+console.log(`Time till expiration: ${timespan.days} days, ${timespan.hours} hours, ${timespan.hours} minutes, ${timespan.seconds}`)
+console.log(`Total Days: ${timespan.totalHours}`)
+console.log(`Total Hours: ${timespan.totalHours}`)
+console.log(`Total Minutes: ${timespan.totalMinutes}`)
+console.log(`Total Seconds: ${timespan.totalSeconds}`)
+console.log(`Total Milliseconds: ${timespan.totalMilliSeconds}`)
+```
 
 ### Contributing
 1. 🍴& ⬇️ 
