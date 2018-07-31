@@ -11,5 +11,6 @@ Contributing
 1. 🍴 & ⬇️ 
 2. npm i
 3. Make a meaningful change
-4. npm run bundle
-5. Open a PR explaining why the change is required.
+4. npm run build
+5. Commit to your 🍴
+6. Open a PR explaining why the change is required.
