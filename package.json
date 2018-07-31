@@ -1,7 +1,7 @@
 {
   "name": "ng-timespan",
-  "version": "0.9.8",
-  "description": "A TypeScript implementation of Timespans",
+  "version": "0.9.9",
+  "description": "A TS/JS implementation of Timespans",
   "main": "ng-timespan.umd.js",
   "jsnext:main": "ng-timespan.esm.js",
   "module": "ng-timespan.esm.js",
