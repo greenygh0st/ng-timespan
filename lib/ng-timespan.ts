@@ -11,12 +11,14 @@ const MILLISECONDS_IN_A_WEEK = MILLISECONDS_IN_A_DAY * DAYS_IN_A_WEEK;
 
 
 export class TimeSpan {
-
+	/**
+	 * Subtract two dates from each other to create a time span
+	 * @param date1 The first date
+	 * @param date2 The second date
+	 */
 	static Subtract(date1: any, date2: any) {
 		let milliSeconds: number = date1 - date2;
-
 		return new TimeSpan(milliSeconds);
-
 	}
 
 	static Day(): TimeSpan {
@@ -36,23 +38,27 @@ export class TimeSpan {
 		this._minutes = 0;
 		this._hours = 0;
 		this._days = 0;
-
 		this.milliseconds = milliSeconds;
 	}
 
+	/**
+	 * Add a date to the current timespan
+	 * @param date Add this date
+	 */
 	addTo(date: Date): Date {
 		console.log('add ' + this.totalMilliSeconds, this);
 		date.setMilliseconds(date.getMilliseconds() + this.totalMilliSeconds);
-
 		return date;
 	}
 
-	subtructFrom(date: Date): Date {
+	/**
+	 * Subtract a date to the current timespan
+	 * @param date Subtract this date
+	 */
+	subtractFrom(date: Date): Date {
 		date.setMilliseconds(date.getMilliseconds() - this.totalMilliSeconds);
-
 		return date;
 	}
-
 
 	private _milliseconds; number;
 	private _totalMilliSeconds: number;
@@ -61,6 +67,9 @@ export class TimeSpan {
 	private _hours: number;
 	private _days: number;
 
+	/**
+	 * Get the number of days between the first and second date
+	 */
 	get days(): number {
 		return this._days;
 	}
@@ -69,9 +78,12 @@ export class TimeSpan {
 			value = 0;
 		}
 		this._days = value;
-		this.calcMilliSeconds();
+		this.calculateMilliSeconds();
 	}
 
+	/**
+	 * Get the number of hours between the first and second date
+	 */
 	get hours(): number {
 		return this._hours;
 	}
@@ -80,9 +92,12 @@ export class TimeSpan {
 			value = 0;
 		}
 		this._hours = value;
-		this.calcMilliSeconds();
+		this.calculateMilliSeconds();
 	}
 
+	/**
+	 * Get the number of minutes between the first and second date
+	 */
 	get minutes(): number {
 		return this._minutes;
 	}
@@ -91,17 +106,23 @@ export class TimeSpan {
 			value = 0;
 		}
 		this._minutes = value;
-		this.calcMilliSeconds();
+		this.calculateMilliSeconds();
 	}
 
+	/**
+	 * Get the number of seconds between the first and second date
+	 */
 	get seconds(): number {
 		return this._seconds;
 	}
 	set seconds(value: number) {
 		this._seconds = value;
-		this.calcMilliSeconds();
+		this.calculateMilliSeconds();
 	}
 
+	/**
+	 * Get the number of milliseconds between the first and second date
+	 */
 	get milliseconds(): number {
 		return this._milliseconds;
 	}
@@ -110,34 +131,42 @@ export class TimeSpan {
 			value = 0;
 		}
 		this._milliseconds = value;
-		this.calcMilliSeconds();
+		this.calculateMilliSeconds();
 	}
 
+	/**
+	 * Get the total number of days between the first and second date
+	 */
 	get totalMilliSeconds() {
 		return this._totalMilliSeconds;
 	}
 
+	/**
+	 * Get the total number of seconds between the first and second date
+	 */
 	get totalSeconds() {
 		return Math.floor(this._totalMilliSeconds / MILLISECONDS_IN_A_SECOND);
 	}
 
+	/**
+	 * Get the total number of minutes between the first and second date
+	 */
 	get totalMinutes() {
 		return Math.floor(this._totalMilliSeconds / MILLISECONDS_IN_A_MINUTE);
 	}
 
+	/**
+	 * Get the total number of hours between the first and second date
+	 */
 	get totalHours() {
 		return Math.floor(this._totalMilliSeconds / MILLISECONDS_IN_AN_HOUR);
 	}
-
-
 
 	roundValue(origValue, maxValue) {
 		return { modulu: origValue % maxValue, addition: Math.floor(origValue / maxValue) };
 	}
 
-
-
-	calcMilliSeconds() {
+	calculateMilliSeconds() {
 
 		let newMilliSecond = this.roundValue(this._milliseconds, MILLISECONDS_IN_A_SECOND);
 		this._milliseconds = newMilliSecond.modulu;
@@ -158,7 +187,4 @@ export class TimeSpan {
 		this._totalMilliSeconds = this.days * MILLISECONDS_IN_A_DAY + this.hours * MILLISECONDS_IN_AN_HOUR + this.minutes * MILLISECONDS_IN_A_MINUTE
 			+ this.seconds * MILLISECONDS_IN_A_SECOND + this.milliseconds;
 	}
-
-
-
 }
