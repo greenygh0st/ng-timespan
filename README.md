@@ -3,7 +3,7 @@ Because there were just not a lot of good Typescript options out there for times
 
 ## Usage
 
-### Install
+### Install from [NPM](https://www.npmjs.com/package/ng-timespan)
 `npm i ng-timespan --save`
 
 ### Import
