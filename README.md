@@ -8,9 +8,9 @@ Because there were just not a lot of good Typescript options out there for times
 `import { Timespan } from 'ng-timespan'`
 
 ### Contributing
-1. 🍴 & ⬇️ 
+1. 🍴& ⬇️ 
 2. npm i
 3. Make a meaningful change
-4. npm run build
+4. npm run build to make sure everythng is working right
 5. Commit to your 🍴
 6. Open a PR explaining why the change is required.
