@@ -22,7 +22,7 @@ let timespan = TimeSpan.Subtract(date1, date2)
 
 // Do stuff! :)
 console.log(`Time till expiration: ${timespan.days} days, ${timespan.hours} hours, ${timespan.hours} minutes, ${timespan.seconds}`)
-console.log(`Total Days: ${timespan.totalHours}`)
+console.log(`Total Days: ${timespan.totalDays}`)
 console.log(`Total Hours: ${timespan.totalHours}`)
 console.log(`Total Minutes: ${timespan.totalMinutes}`)
 console.log(`Total Seconds: ${timespan.totalSeconds}`)
