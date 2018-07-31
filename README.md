@@ -1,13 +1,13 @@
 # ng-timespan
 Because there were just not a lot of good Typescript options out there for timespans.
 
-Usage
+### Usage
 
 `npm i ng-timespan --save`
 
 `import { Timespan } from 'ng-timespan'`
 
-Contributing
+### Contributing
 1. 🍴 & ⬇️ 
 2. npm i
 3. Make a meaningful change
