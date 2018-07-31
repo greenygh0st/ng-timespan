@@ -4,7 +4,7 @@
   "description": "A TypeScript implementation of Timespans",
   "main": "index.js",
   "scripts": {
-    "copy": "node tools/copy-package.js",
+    "copy": "node tools/copy-package.js && node tools/copy-readme.js",
     "bundle": "tsc && ngc",
     "build": "npm run bundle && npm run copy",
     "publish": "cd ./dist && npm publish",
