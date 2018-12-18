@@ -17,7 +17,7 @@ export class TimeSpan {
 	 * @param date2 The second date
 	 */
 	static Subtract(date1: any, date2: any) {
-		let milliSeconds: number = date1 - date2;
+    let milliSeconds: number = date2 - date1;
 		return new TimeSpan(milliSeconds);
 	}
 

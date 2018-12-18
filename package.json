@@ -1,6 +1,6 @@
 {
   "name": "ng-timespan",
-  "version": "0.9.9",
+  "version": "1.0.0",
   "description": "A TS/JS implementation of Timespans",
   "main": "ng-timespan.umd.js",
   "jsnext:main": "ng-timespan.esm.js",
@@ -13,7 +13,7 @@
     "build": "rm -rf ./dist && npm run bundle && npm run copy",
     "publish": "npm run build && cd ./dist && npm publish && ../",
     "postpublish": "rm -rf ./dist && echo \"All done!\"; exit 0",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r ts-node/register 'tests/**/*.spec.ts'"
   },
   "repository": {
     "type": "git",
@@ -29,11 +29,17 @@
     "@angular/compiler": "^6.1.0",
     "@angular/compiler-cli": "^6.1.0",
     "@angular/core": "^6.1.0",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
+    "cross-env": "^5.2.0",
     "del": "^3.0.0",
+    "mocha": "^5.2.0",
     "rollup-plugin-angular": "^0.4.4",
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-typescript": "^0.8.1",
+    "ts-node": "^7.0.1",
     "tslib": "^1.9.3",
     "typescript": "^2.9.0"
   },
