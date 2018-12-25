@@ -13,7 +13,9 @@
     "build": "rm -rf ./dist && npm run bundle && npm run copy",
     "publish": "npm test && npm run build && cd ./dist && npm publish && ../",
     "postpublish": "rm -rf ./dist && echo \"All done!\"; exit 0",
-    "test": "mocha -r ts-node/register 'tests/**/*.spec.ts'"
+    "pretest": "tsc -p ./test",
+    "test": "nyc mocha -r ts-node/register/type-check 'test/**/*.spec.ts'",
+    "posttest": "nyc report --reporter=json && rm -f ./lib/*.js && rm -f ./lib/*.js.map && rm -f ./test/*.js && rm -f ./test/*.js.map"
   },
   "repository": {
     "type": "git",
@@ -32,9 +34,11 @@
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
     "chai": "^4.2.0",
+    "codecov": "^3.1.0",
     "cross-env": "^5.2.0",
     "del": "^3.0.0",
     "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
     "rollup-plugin-angular": "^0.4.4",
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",

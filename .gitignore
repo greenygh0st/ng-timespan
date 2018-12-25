@@ -3,3 +3,10 @@
 /node_modules/*
 /dist/
 /dist/*
+/coverage/
+/coverage/*
+/.nyc_output/
+/.nyc_output/*
+/lib/*.js
+/test/*.js
+/test/*.js.map
