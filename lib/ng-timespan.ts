@@ -12,13 +12,49 @@ const MILLISECONDS_IN_A_WEEK = MILLISECONDS_IN_A_DAY * DAYS_IN_A_WEEK;
 
 export class TimeSpan {
 	/**
-	 * Subtract two dates from each other to create a time span
+	 * Add the second date to the first date to create a time span
 	 * @param date1 The first date
 	 * @param date2 The second date
 	 */
-	static Subtract(date1: any, date2: any) {
-    let milliSeconds: number = date2 - date1;
-		return new TimeSpan(milliSeconds);
+	static Addition(date1: Number|Date, date2: Number|Date) {
+		if ((typeof date1 === 'number') && (typeof date2 === 'number')) {
+			let milliSeconds: number = (date2 as number) - (date1 as number);
+			return new TimeSpan(milliSeconds);
+		} else if (date1 instanceof Date && date2 instanceof Date) {
+			let milliSeconds: number = date2.getTime() - date1.getTime();
+			return new TimeSpan(milliSeconds);
+		} else if (date1 instanceof Date && (typeof date2 === 'number')) {
+			let milliSeconds: number = (date2 as number) - date1.getTime();
+			return new TimeSpan(milliSeconds);
+		} else if ((typeof date1 === 'number') && date2 instanceof Date) {
+			let milliSeconds: number = date2.getTime() - (date1 as number);
+			return new TimeSpan(milliSeconds);
+		}else {
+			throw "Subtract out of range";
+		}
+	}
+
+	/**
+	 * Subtract the first date from second date to create a time span
+	 * @param date1 The first date
+	 * @param date2 The second date
+	 */
+	static Subtract(date1: Number|Date, date2: Number|Date) {		
+		if ((typeof date1 === 'number') && (typeof date2 === 'number')) {
+			let milliSeconds: number = (date2 as number) - (date1 as number);
+			return new TimeSpan(milliSeconds);
+		} else if (date1 instanceof Date && date2 instanceof Date) {
+			let milliSeconds: number = date2.getTime() - date1.getTime();
+			return new TimeSpan(milliSeconds);
+		} else if (date1 instanceof Date && (typeof date2 === 'number')) {
+			let milliSeconds: number = (date2 as number) - date1.getTime();
+			return new TimeSpan(milliSeconds);
+		} else if ((typeof date1 === 'number') && date2 instanceof Date) {
+			let milliSeconds: number = date2.getTime() - (date1 as number);
+			return new TimeSpan(milliSeconds);
+		}else {
+			throw "Subtract out of range";
+		}
 	}
 
 	static Day(): TimeSpan {

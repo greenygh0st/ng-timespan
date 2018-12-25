@@ -1,9 +1,24 @@
 language: node_js
 node_js:
-  - "10"
+- '10'
 before_install:
-  - npm install -g typescript codecov
+- npm install -g typescript codecov
 script:
-  - npm test
+- npm test
 after_success:
-  - codecov
+- codecov
+branches:
+  only:
+  - master
+deploy:
+  provider: npm
+  email: dale@daleslab.com
+  api_key:
+    secure: APWhf6jTNpcp8YSz5g4H5A/xhEEu5WPbio+yqiHyznADB/3WkI2Z2EeQjTOIVlybgjGj25ZiIFQCvpIUg/meHnISU31utGf9cnsjyit6JlyL3ebjNsc2fiJOnvdQy/hk6N0RHbL5sFYsAmED0YFUJpQsjrJnQwW7QtoMEftrz/FfFrZM0XBiuyZLWgQ3HwpIgGB2Q0Ab1RQhpyFRGSvzovBJ0tbMNWWdjZ2cMDp99UudVQFpm42pUZALztgPk3M2ZRYBFDx6N+aXhm/z7wu/ViX0j+Ji6y1rOm4Oj+zqRn9SsIt78wSPKbQDJfkR7kYyTPPxtc8vpcYq9u/1m+I3XmP4i3CzZzP0XUf6dVuiXrydkVC26+xka2TgxvVVD7jRiIZwGCaN/eqdD4MlHXdeVS9e8IerV5A7yrtkUEo2VPYiqWBGlebzZFkjlv2n0PcVMq7IcrSoyDZQLUZD/R++2HpiJgTCC1SJ4SdfAgF76gOHZI7E9ehAy3C5qa0BC4065RyIgeDd4Z3iWgbK2RjwW6QZrCnB1mzAYnS66TgD0Bw9JaUsBQWx2R2/frFFFy34NDXgWeKYcZGi5Inl6g1LSTmWTxAfP5ZLU+OnuCdMPmihadBzxulKrquRXqauHwQgUWgDaxmElqtfNWQYT4LxV8VA9jyT/zeqiGvek8koCvg=
+  on:
+    tags: true
+    repo: greenygh0st/ng-timespan
+notifications:
+  slack:
+    rooms:
+      secure: EjPN9E6MU4y8f8CpEVkHtMvewGyjgsbnuOpCz/wrQx/0XzTi+/1/mbSinWOiGqX/rOv8kga4zs16AanfBAjRyuZnDbeUm6fzMtSQDot4X3PSXCA1y9aU3uFYvvK41lElksSyseSaqrSU0bi7NQdWX5k9Cx62qBDWYyVBA87XErAWkVlpMf3R3QSJ2wi/R1SrFOKAsCsiTlID1CgdAnCul4844ZmpgSrrxIHyAe3c7aRl0JRQIr3qj5cYasGRtFvZvTzd7VIGg2afRc8weVgtpX5FPdYE7ddRVvo3bZjoD7BlFY27CryuSvzCobh7xHWrGbGL2KQLQvl+egD5DWUfKBhbfmKs4b3qb7W09uCUzkBtsCzctYMlNKTG8sUN2rdH3+/6RcceA9+yifUG6hPw6N6SM+/IMJoM4hWdEmn0QN6H0ObQE49y0C3nf5sBhaW36ekhFVmNL+kZsOHbzFXvMUmrwPyxowFyRR0DJiIDwcKZ/xIXZUWdTJB4vE/vApunLdcG8KZF6ZxpRCGRROpNypgtQ/ozronE2W+Wgnq0E6WjXzCAKGhMGuGpfcQHxoTETsvrmC6xmIp1Igx8h8yYYPaF3+d47tqN2HjcAq4TIo09LI8nxoh5p7H8tr5iORKazEYFaRWIZhadK9/J2YgrfrilUUarXHAYc6VVs0uEofw=
