@@ -5,8 +5,7 @@ before_install:
 - npm install -g typescript codecov
 script:
 - npm test
-after_success:
-- codecov
+- codecov -f coverage/*.json
 branches:
   only:
   - master
