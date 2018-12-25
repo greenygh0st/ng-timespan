@@ -1,4 +1,5 @@
 # ng-timespan
+[![codecov](https://codecov.io/gh/codecov/ng-timespan/branch/master/graph/badge.svg)](https://codecov.io/gh/codecov/example-typescript)
 [![Build Status](https://travis-ci.org/greenygh0st/ng-timespan.svg?branch=master)](https://travis-ci.org/greenygh0st/ng-timespan) 
 
 Because there were just not a lot of good Typescript options out there for timespans. Intended to be used with [Angular](https://angular.io/) but can potentially be used for just about any JS/TS project.
