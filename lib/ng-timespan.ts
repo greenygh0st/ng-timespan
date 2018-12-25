@@ -29,8 +29,6 @@ export class TimeSpan {
 		} else if ((typeof date1 === 'number') && date2 instanceof Date) {
 			let milliSeconds: number = date2.getTime() - (date1 as number);
 			return new TimeSpan(milliSeconds);
-		}else {
-			throw "Subtract out of range";
 		}
 	}
 
@@ -52,8 +50,6 @@ export class TimeSpan {
 		} else if ((typeof date1 === 'number') && date2 instanceof Date) {
 			let milliSeconds: number = date2.getTime() - (date1 as number);
 			return new TimeSpan(milliSeconds);
-		}else {
-			throw "Subtract out of range";
 		}
 	}
 
@@ -81,20 +77,20 @@ export class TimeSpan {
 	 * Add a date to the current timespan
 	 * @param date Add this date
 	 */
-	addTo(date: Date): Date {
-		console.log('add ' + this.totalMilliSeconds, this);
-		date.setMilliseconds(date.getMilliseconds() + this.totalMilliSeconds);
-		return date;
-	}
+	// addTo(date: Date): Date {
+	// 	console.log('add ' + this.totalMilliSeconds, this);
+	// 	date.setMilliseconds(date.getMilliseconds() + this.totalMilliSeconds);
+	// 	return date;
+	// }
 
 	/**
 	 * Subtract a date to the current timespan
 	 * @param date Subtract this date
 	 */
-	subtractFrom(date: Date): Date {
-		date.setMilliseconds(date.getMilliseconds() - this.totalMilliSeconds);
-		return date;
-	}
+	// subtractFrom(date: Date): Date {
+	// 	date.setMilliseconds(date.getMilliseconds() - this.totalMilliSeconds);
+	// 	return date;
+	// }
 
 	private _milliseconds; number;
 	private _totalMilliSeconds: number;

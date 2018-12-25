@@ -8,5 +8,6 @@
 /.nyc_output/
 /.nyc_output/*
 /lib/*.js
+/lib/*.js.map
 /test/*.js
 /test/*.js.map

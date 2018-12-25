@@ -1,6 +1,6 @@
 {
   "name": "ng-timespan",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A TS/JS implementation of Timespans",
   "main": "ng-timespan.umd.js",
   "jsnext:main": "ng-timespan.esm.js",
@@ -11,7 +11,7 @@
     "bundle": "rollup -c rollup.config.umd.js && rollup -c rollup.config.esm.js && tsc && ngc",
     "postbundle": "node tools/remove-code.js",
     "build": "rm -rf ./dist && npm run bundle && npm run copy",
-    "publish": "npm test && npm run build && cd ./dist && npm publish && ../",
+    "publish": "npm test && npm run build && cd ./dist && npm publish",
     "postpublish": "rm -rf ./dist && echo \"All done!\"; exit 0",
     "pretest": "tsc -p ./test",
     "test": "nyc mocha -r ts-node/register/type-check 'test/**/*.spec.ts'",
