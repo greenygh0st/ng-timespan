@@ -17,16 +17,16 @@ export class TimeSpan {
 	 * @param date2 The second date
 	 */
 	static Addition(date1: Number|Date, date2: Number|Date) {
-		if ((typeof date1 === 'number') && (typeof date2 === 'number')) {
+		if ((typeof date1 === "number") && (typeof date2 === "number")) {
 			let milliSeconds: number = (date2 as number) - (date1 as number);
 			return new TimeSpan(milliSeconds);
 		} else if (date1 instanceof Date && date2 instanceof Date) {
 			let milliSeconds: number = date2.getTime() - date1.getTime();
 			return new TimeSpan(milliSeconds);
-		} else if (date1 instanceof Date && (typeof date2 === 'number')) {
+		} else if (date1 instanceof Date && (typeof date2 === "number")) {
 			let milliSeconds: number = (date2 as number) - date1.getTime();
 			return new TimeSpan(milliSeconds);
-		} else if ((typeof date1 === 'number') && date2 instanceof Date) {
+		} else if ((typeof date1 === "number") && date2 instanceof Date) {
 			let milliSeconds: number = date2.getTime() - (date1 as number);
 			return new TimeSpan(milliSeconds);
 		}
@@ -37,17 +37,17 @@ export class TimeSpan {
 	 * @param date1 The first date
 	 * @param date2 The second date
 	 */
-	static Subtract(date1: Number|Date, date2: Number|Date) {		
-		if ((typeof date1 === 'number') && (typeof date2 === 'number')) {
+	static Subtract(date1: Number|Date, date2: Number|Date) {
+		if ((typeof date1 === "number") && (typeof date2 === "number")) {
 			let milliSeconds: number = (date2 as number) - (date1 as number);
 			return new TimeSpan(milliSeconds);
 		} else if (date1 instanceof Date && date2 instanceof Date) {
 			let milliSeconds: number = date2.getTime() - date1.getTime();
 			return new TimeSpan(milliSeconds);
-		} else if (date1 instanceof Date && (typeof date2 === 'number')) {
+		} else if (date1 instanceof Date && (typeof date2 === "number")) {
 			let milliSeconds: number = (date2 as number) - date1.getTime();
 			return new TimeSpan(milliSeconds);
-		} else if ((typeof date1 === 'number') && date2 instanceof Date) {
+		} else if ((typeof date1 === "number") && date2 instanceof Date) {
 			let milliSeconds: number = date2.getTime() - (date1 as number);
 			return new TimeSpan(milliSeconds);
 		}
@@ -169,32 +169,32 @@ export class TimeSpan {
 	/**
 	 * Get the total number of days between the first and second date
 	 */
-	get totalMilliSeconds() {
+	get totalMilliSeconds(): number {
 		return this._totalMilliSeconds;
 	}
 
 	/**
 	 * Get the total number of seconds between the first and second date
 	 */
-	get totalSeconds() {
+	get totalSeconds(): number {
 		return Math.floor(this._totalMilliSeconds / MILLISECONDS_IN_A_SECOND);
 	}
 
 	/**
 	 * Get the total number of minutes between the first and second date
 	 */
-	get totalMinutes() {
+	get totalMinutes(): number {
 		return Math.floor(this._totalMilliSeconds / MILLISECONDS_IN_A_MINUTE);
 	}
 
 	/**
 	 * Get the total number of hours between the first and second date
 	 */
-	get totalHours() {
+	get totalHours(): number {
 		return Math.floor(this._totalMilliSeconds / MILLISECONDS_IN_AN_HOUR);
 	}
 
-	roundValue(origValue, maxValue) {
+	roundValue(origValue: number, maxValue: number) {
 		return { modulu: origValue % maxValue, addition: Math.floor(origValue / maxValue) };
 	}
 
