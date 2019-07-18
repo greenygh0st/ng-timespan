@@ -6,9 +6,6 @@ before_install:
 script:
 - npm test
 - codecov -f coverage/*.json
-branches:
-  only:
-  - master
 deploy:
   provider: npm
   email: dale@daleslab.com
