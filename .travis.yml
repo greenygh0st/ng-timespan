@@ -7,7 +7,9 @@ script:
 - npm test
 - codecov -f coverage/*.json
 before_deploy:
-  - cd dist
+  - npm i -g rollup
+  - npm run build
+  - cd ./dist
 deploy:
   provider: npm
   email: dale@daleslab.com
