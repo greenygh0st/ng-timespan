@@ -2,12 +2,11 @@ language: node_js
 node_js:
 - '10'
 before_install:
-- npm install -g typescript codecov
+- npm install -g typescript codecov tsc rollup
 script:
 - npm test
 - codecov -f coverage/*.json
 before_deploy:
-  - npm i -g rollup
   - npm run build
   - cd ./dist
 deploy:
