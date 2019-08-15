@@ -10,7 +10,7 @@
     "copy": "node tools/copy-package.js && node tools/copy-readme.js",
     "bundle": "rollup -c rollup.config.umd.js && rollup -c rollup.config.esm.js && tsc",
     "postbundle": "node tools/remove-code.js",
-    "build": "rm -rf ./dist && npm run bundle && npm run copy",
+    "build": "rm -rf ./dist && npm run bundle && npm run copy && touch ./dist/.npmrc",
     "publish": "npm test && npm run build && cd ./dist && npm publish",
     "postpublish": "rm -rf ./dist && echo \"All done!\"; exit 0",
     "pretest": "tsc -p ./test",
